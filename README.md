@@ -16,8 +16,14 @@ This repository tracks my journey from digital design fundamentals to advanced s
 
 ---
 
-## 🛠️ Toolchain
+## 🛠️ Toolchain & Verification Standard
 - **HDL**: Verilog (IEEE 1364-2001)
 - **Simulator**: [Icarus Verilog (`iverilog`)](https://steveicarus.github.io/iverilog/)
 - **Waveform Viewer**: [GTKWave](http://gtkwave.sourceforge.net/)
 - **Editor**: Visual Studio Code with *Verilog-HDL/SystemVerilog* extension
+
+### 📐 Mandatory Golden Rules for Every Lab:
+1. **Self-Checking Testbench**: Every design file `design.v` must be paired with `tb_design.v`.
+2. **GTKWave Waveform Dump**: Every testbench must include `$dumpfile` and `$dumpvars` to generate `.vcd` trace files.
+3. **Visual Verification**: Every lab includes waveform analysis in GTKWave to inspect clock edges, signal transitions, and timing.
+
