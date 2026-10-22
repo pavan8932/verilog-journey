@@ -3,6 +3,8 @@
 
 This repository tracks my journey from digital design fundamentals to advanced synthesizable RTL architecture, self-checking testbench design, and full-scale hardware projects.
 
+📖 **[Read the Master Project Memory & Daily Progress Log](./project_memory.md)**
+
 ---
 
 ## 📂 Repository Structure
@@ -13,6 +15,7 @@ This repository tracks my journey from digital design fundamentals to advanced s
   - **Milestone 1**: Parameterized Synchronous FIFO & 32-bit ALU.
   - **Milestone 2**: Full-Duplex Configurable UART with 16x Oversampling & FIFOs.
   - **Capstone**: 5-Stage Pipelined RISC-V (RV32I) Processor / AXI4-Lite SPI-I2C Subsystem.
+- [`project_memory.md`](./project_memory.md) — Comprehensive execution plan, roadmap tracker, and daily journal.
 
 ---
 
@@ -26,4 +29,3 @@ This repository tracks my journey from digital design fundamentals to advanced s
 1. **Self-Checking Testbench**: Every design file `design.v` must be paired with `tb_design.v`.
 2. **GTKWave Waveform Dump**: Every testbench must include `$dumpfile` and `$dumpvars` to generate `.vcd` trace files.
 3. **Visual Verification**: Every lab includes waveform analysis in GTKWave to inspect clock edges, signal transitions, and timing.
-
