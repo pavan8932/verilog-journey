@@ -1,0 +1,14 @@
+# Simulation output artifacts
+*.vcd
+*.vvp
+*.out
+*.log
+
+# Windows & Tool Installers
+*.exe
+*.msi
+*.yaml
+
+# Editor settings
+.vscode/
+.idea/
