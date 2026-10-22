@@ -9,6 +9,9 @@
 *.msi
 *.yaml
 
+# Large binary files & Books
+*.pdf
+
 # Editor settings
 .vscode/
 .idea/
