@@ -4,7 +4,7 @@
 > **Primary Reference**: *Verilog HDL: A Guide to Digital Design and Synthesis (2nd Edition)* by Samir Palnitkar  
 > **Standard**: IEEE 1364-2001 Verilog HDL  
 > **Timeline**: 10–12 Weeks | **Daily Commitment**: 2 Hours/Day (~140–160 Hours Total)  
-> **Last Updated**: 2026-10-23  
+> **Last Updated**: 2026-10-24  
 
 ---
 
@@ -68,13 +68,13 @@ flowchart LR
   - [x] Simulation verified in `iverilog` + `gtkwave`.
   - [x] Waveform screenshot documented and pushed to GitHub.
   - [x] Book reading reference: Pages 11–26 (PDF Pages 37–52).
-- [ ] **Day 3–5 (Ch 3)**: Basic Concepts & Lexical Conventions
-  - [ ] 4-value logic system (`0`, `1`, `x`, `z`).
-  - [ ] Net types (`wire`, `tri`) vs. Register types (`reg`, `integer`, `time`).
-  - [ ] Numbers, vector slicing, and memories (`reg [7:0] mem [0:255]`).
-  - [ ] System tasks: `$display`, `$monitor`, `$time`, `$finish`, `$dumpfile`, `$dumpvars`.
-  - [ ] Compiler directives: `` `timescale ``, `` `define ``, `` `include ``.
-- [ ] **Day 6–7 (Ch 4)**: Modules and Ports
+- [x] **Day 3 (Ch 3)**: Basic Concepts & Lexical Conventions
+  - [x] 4-value logic system (`0`, `1`, `x`, `z`).
+  - [x] Net types (`wire`, `tri`) vs. Register types (`reg`, `integer`, `time`).
+  - [x] Numbers, vector slicing, and memories (`reg [7:0] mem [0:3]`).
+  - [x] System tasks: `$display`, `$monitor`, `$time`, `$finish`, `$dumpfile`, `$dumpvars`.
+  - [x] Compiler directives: `` `timescale ``, `` `define ``.
+- [ ] **Day 4–5 (Ch 4)**: Modules and Ports
   - [ ] Module declarations and ANSI C-style port lists (Verilog-2001).
   - [ ] Port connection rules: By Name (`.port(signal)`) vs. By Position.
   - [ ] Hierarchical names and signal probing across scopes.
@@ -146,7 +146,8 @@ flowchart LR
 | Date | Day # | Chapter | Topic / Lab Completed | Artifacts Created | Status |
 | :---: | :---: | :---: | :--- | :--- | :---: |
 | **2026-10-23** | Day 1–2 | Ch 1 & 2 | **Hierarchical Modeling & 4-bit Ripple Carry Counter**<br>- Installed Icarus Verilog & GTKWave on Windows.<br>- Initialized Git repo, created `.gitignore` and `README.md`.<br>- Hand-coded `dff.v`, `tff.v`, `ripple_carry_counter.v`, `tb_ripple_carry_counter.v`.<br>- Ran simulation with `iverilog` & `vvp`.<br>- Verified 10ns clock and binary count in GTKWave.<br>- Documented waveform and committed to GitHub. | - [`labs/ch02_hierarchical/`](./labs/ch02_hierarchical/)<br>- `waveform.png`<br>- `counter.vcd` | ✅ **DONE** |
-| **Upcoming** | Day 3 | Ch 3 | **Basic Concepts, Data Types & 4-State Logic** | `labs/ch03_basic_concepts/` | ⏳ Pending |
+| **2026-10-24** | Day 3 | Ch 3 | **Basic Concepts, Data Types & 4-State Logic**<br>- Studied 4-state logic (0, 1, x, z), nets vs. regs, number formats, and memory arrays.<br>- Coded `data_types_demo.v` with tri-state bus, vector slicing (`[7:4]`, `[3:0]`), and 4-word memory array.<br>- Built `tb_data_types_demo.v` with `$monitor`, `$display`, and GTKWave dump.<br>- Verified yellow high-impedance (`z`) line and red uninitialized (`x`) state in GTKWave.<br>- Documented waveform and committed to GitHub. | - [`labs/ch03_basic_concepts/`](./labs/ch03_basic_concepts/)<br>- `waveform.png`<br>- `data_types.vcd` | ✅ **DONE** |
+| **Upcoming** | Day 4–5 | Ch 4 | **Modules and Ports** (Port connection styles & Hierarchical Names) | `labs/ch04_modules_ports/` | ⏳ Pending |
 
 ---
 
