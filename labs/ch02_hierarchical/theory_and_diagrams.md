@@ -111,12 +111,15 @@ Because the clock is not applied simultaneously to all flip-flops, the clock tra
 
 ```mermaid
 flowchart LR
-    SYS_CLK["System clk"] -->|clk| TFF0["tff 0\n(Bit 0)"]
-    RST["reset"] --> TFF0 & TFF1 & TFF2 & TFF3
+    SYS_CLK["System clk"] --> TFF0["tff 0 (Bit 0)"]
+    RST["reset"] --> TFF0
+    RST --> TFF1["tff 1 (Bit 1)"]
+    RST --> TFF2["tff 2 (Bit 2)"]
+    RST --> TFF3["tff 3 (Bit 3)"]
 
-    TFF0 -->|q[0]| TFF1["tff 1\n(Bit 1)"]
-    TFF1 -->|q[1]| TFF2["tff 2\n(Bit 2)"]
-    TFF2 -->|q[2]| TFF3["tff 3\n(Bit 3)"]
+    TFF0 -->|q0| TFF1
+    TFF1 -->|q1| TFF2
+    TFF2 -->|q2| TFF3
 
     TFF0 --> Q0["Q[0] (Frequency = f/2)"]
     TFF1 --> Q1["Q[1] (Frequency = f/4)"]
