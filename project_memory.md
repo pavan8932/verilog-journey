@@ -4,7 +4,7 @@
 > **Primary Reference**: *Verilog HDL: A Guide to Digital Design and Synthesis (2nd Edition)* by Samir Palnitkar  
 > **Standard**: IEEE 1364-2001 Verilog HDL  
 > **Timeline**: 10–12 Weeks | **Daily Commitment**: 2 Hours/Day (~140–160 Hours Total)  
-> **Last Updated**: 2026-10-24  
+> **Last Updated**: 2026-10-27  
 
 ---
 
@@ -78,11 +78,11 @@ flowchart LR
   - [x] Module declarations and ANSI C-style port lists (Verilog-2001).
   - [x] Port connection rules: By Name (`.port(signal)`) vs. By Position.
   - [x] Hierarchical names and signal probing across scopes.
-- [ ] **Day 5–6 (Ch 5)**: Gate-Level Modeling
-  - [ ] Built-in gate primitives (`and`, `nand`, `or`, `nor`, `xor`, `xnor`, `buf`, `not`).
-  - [ ] Gate delays: rise, fall, turn-off delays, min/typ/max specifications.
-  - [ ] Lab: 4-to-1 MUX, 3-to-8 Decoder, 4-bit Ripple-Carry Adder from gates.
-- [ ] **Day 11–14 (Ch 6)**: Dataflow Modeling
+- [x] **Day 5 (Ch 5)**: Gate-Level Modeling
+  - [x] Built-in gate primitives (`and`, `nand`, `or`, `nor`, `xor`, `xnor`, `buf`, `not`).
+  - [x] Gate delays: rise, fall, turn-off delays, min/typ/max specifications.
+  - [x] Lab: 4-to-1 Multiplexer with rise/fall gate delays.
+- [ ] **Day 6–8 (Ch 6)**: Dataflow Modeling
   - [ ] Continuous assignments (`assign`) and evaluation semantics.
   - [ ] Operators: Arithmetic, Logical, Bitwise, Reduction, Shift, Concatenation `{}`, Replication.
   - [ ] Conditional operator (`? :`) for hardware multiplexers.
@@ -148,7 +148,8 @@ flowchart LR
 | **2026-10-23** | Day 1–2 | Ch 1 & 2 | **Hierarchical Modeling & 4-bit Ripple Carry Counter**<br>- Installed Icarus Verilog & GTKWave on Windows.<br>- Initialized Git repo, created `.gitignore` and `README.md`.<br>- Hand-coded `dff.v`, `tff.v`, `ripple_carry_counter.v`, `tb_ripple_carry_counter.v`.<br>- Ran simulation with `iverilog` & `vvp`.<br>- Verified 10ns clock and binary count in GTKWave.<br>- Documented waveform and committed to GitHub. | - [`labs/ch02_hierarchical/`](./labs/ch02_hierarchical/)<br>- `waveform.png`<br>- `counter.vcd` | ✅ **DONE** |
 | **2026-10-24** | Day 3 | Ch 3 | **Basic Concepts, Data Types & 4-State Logic**<br>- Studied 4-state logic (0, 1, x, z), nets vs. regs, number formats, and memory arrays.<br>- Coded `data_types_demo.v` with tri-state bus, vector slicing (`[7:4]`, `[3:0]`), and 4-word memory array.<br>- Built `tb_data_types_demo.v` with `$monitor`, `$display`, and GTKWave dump.<br>- Verified yellow high-impedance (`z`) line and red uninitialized (`x`) state in GTKWave.<br>- Documented waveform and committed to GitHub. | - [`labs/ch03_basic_concepts/`](./labs/ch03_basic_concepts/)<br>- `waveform.png`<br>- `data_types.vcd` | ✅ **DONE** |
 | **2026-10-24** | Day 4 | Ch 4 | **Modules and Ports (Hierarchical 4-bit Ripple Adder)**<br>- Studied module declarations, port connection rules (inside vs. outside `reg`/`wire`).<br>- Hand-coded `half_adder.v`, `full_adder.v` using port connection by name (`.port(signal)`).<br>- Built top-level `adder4.v` cascading 4 full adders with internal carry chain (`c1`, `c2`, `c3`).<br>- Built `tb_adder4.v` demonstrating hierarchical signal probing (`dut.c1`, `dut.c2`, `dut.c3`).<br>- Verified addition, carry-in, and overflow conditions in GTKWave.<br>- Documented waveform and committed to GitHub. | - [`labs/ch04_modules_ports/`](./labs/ch04_modules_ports/)<br>- `waveform.png`<br>- `adder4.vcd` | ✅ **DONE** |
-| **Upcoming** | Day 5–6 | Ch 5 | **Gate-Level Modeling** (Built-in primitives & Gate Delays) | `labs/ch05_gate_level/` | ⏳ Pending |
+| **2026-10-27** | Day 5 | Ch 5 | **Gate-Level Modeling (4-to-1 MUX with Gate Delays)**<br>- Studied built-in logic gate primitives (`not`, `and`, `or`), output-first ordering.<br>- Coded `mux4_to_1.v` using logic primitives with asymmetric rise/fall delays `#(2, 3)`.<br>- Built `tb_mux4_to_1.v` exhaustively testing all 4 input channels with `$monitor` and GTKWave dump.<br>- Created `theory_and_diagrams.md` with MUX truth table, Boolean derivation, and propagation delay calculation.<br>- Ready for simulation and waveform verification. | - [`labs/ch05_gate_level/`](./labs/ch05_gate_level/)<br>- `theory_and_diagrams.md`<br>- `mux4_to_1.vcd` | 🔄 In Progress |
+| **Upcoming** | Day 6–8 | Ch 6 | **Dataflow Modeling** (`assign` statements & operators) | `labs/ch06_dataflow/` | ⏳ Pending |
 
 ---
 
