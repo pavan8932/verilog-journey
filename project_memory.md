@@ -4,7 +4,7 @@
 > **Primary Reference**: *Verilog HDL: A Guide to Digital Design and Synthesis (2nd Edition)* by Samir Palnitkar  
 > **Standard**: IEEE 1364-2001 Verilog HDL  
 > **Timeline**: 10–12 Weeks | **Daily Commitment**: 2 Hours/Day (~140–160 Hours Total)  
-> **Last Updated**: 2026-10-30  
+> **Last Updated**: 2026-11-03  
 
 ---
 
@@ -90,18 +90,14 @@ flowchart LR
 ---
 
 ### Phase 2: Behavioral Modeling, FSMs & Testbenches (Weeks 4–6)
-- [ ] **Day 15–18 (Ch 7)**: Behavioral Modeling & Structured Procedures
-  - [ ] `initial` blocks vs. `always` blocks.
-  - [ ] **Golden Rule**: Blocking (`=`) vs. Non-blocking (`<=`) assignments.
-  - [ ] Transparent latch avoidance (complete `if-else` and `case` with `default`).
-  - [ ] Synthesizable loops (`for` loops with constant bounds).
-  - [ ] Lab: Universal Shift Register & Configurable Modulo-N Counter.
-- [ ] **Day 19–21 (Ch 7)**: Finite State Machines (FSMs)
-  - [ ] Mealy vs. Moore state machine architectures.
-  - [ ] 1-process vs. 2-process vs. 3-process FSM coding styles (Industry Standard 3-process).
-  - [ ] State encodings: Binary, One-Hot, Gray Code.
-  - [ ] Lab: Sequence Detector (`10110`) & Traffic Light Controller.
-- [ ] **Day 22–24 (Ch 8 & 9)**: Tasks, Functions & Advanced Techniques
+- [x] **Day 7 (Ch 7)**: Behavioral Modeling & Structured Procedures
+  - [x] `initial` blocks vs. `always` blocks.
+  - [x] **Golden Rule**: Blocking (`=`) vs. Non-blocking (`<=`) assignments.
+  - [x] Transparent latch avoidance (complete `if-else` and `case` with `default`).
+  - [x] Finite State Machines (Moore & Mealy architectures).
+  - [x] Industry-Standard 3-Process FSM coding style.
+  - [x] Lab: Overlapping Sequence Detector (`1011`) with state transition diagram.
+- [ ] **Day 8–9 (Ch 8 & 9)**: Tasks, Functions & Advanced Techniques
   - [ ] Tasks vs. Functions: synthesis rules and testbench drivers.
   - [ ] Module parameters (`parameter`, `localparam`) and instantiation overrides (`#(...)`).
   - [ ] Generate blocks (`generate ... endgenerate`, `genvar`).
@@ -149,7 +145,8 @@ flowchart LR
 | **2026-10-24** | Day 4 | Ch 4 | **Modules and Ports (Hierarchical 4-bit Ripple Adder)**<br>- Studied module declarations, port connection rules (inside vs. outside `reg`/`wire`).<br>- Hand-coded `half_adder.v`, `full_adder.v` using port connection by name (`.port(signal)`).<br>- Built top-level `adder4.v` cascading 4 full adders with internal carry chain (`c1`, `c2`, `c3`).<br>- Built `tb_adder4.v` demonstrating hierarchical signal probing (`dut.c1`, `dut.c2`, `dut.c3`).<br>- Verified addition, carry-in, and overflow conditions in GTKWave.<br>- Documented waveform and committed to GitHub. | - [`labs/ch04_modules_ports/`](./labs/ch04_modules_ports/)<br>- `waveform.png`<br>- `adder4.vcd` | ✅ **DONE** |
 | **2026-10-27** | Day 5 | Ch 5 | **Gate-Level Modeling (4-to-1 MUX with Gate Delays)**<br>- Studied built-in logic gate primitives (`not`, `and`, `or`), output-first ordering.<br>- Coded `mux4_to_1.v` using logic primitives with asymmetric rise/fall delays `#(2, 3)`.<br>- Built `tb_mux4_to_1.v` exhaustively testing all 4 input channels with `$monitor` and GTKWave dump.<br>- Created `theory_and_diagrams.md` with MUX truth table, Boolean derivation, and propagation delay calculation.<br>- Verified 5ns gate propagation delay and channel selection in GTKWave.<br>- Documented waveform and committed to GitHub. | - [`labs/ch05_gate_level/`](./labs/ch05_gate_level/)<br>- `theory_and_diagrams.md`<br>- `waveform.png`<br>- `mux4_to_1.vcd` | ✅ **DONE** |
 | **2026-10-30** | Day 6 | Ch 6 | **Dataflow Modeling (4-bit Carry Lookahead Adder)**<br>- Studied continuous assignment (`assign`), concurrent evaluation, operator precedence.<br>- Coded `cla_4bit.v` using Generate ($G$) and Propagate ($P$) logic with parallel lookahead carry equations.<br>- Implemented Zero flag using Reduction NOR (`~\|sum`).<br>- Built `tb_cla_4bit.v` verifying addition, carry-in, overflow, and zero detection.<br>- Created `theory_and_diagrams.md` with Boolean carry derivation and delay comparison vs. Ripple Carry.<br>- Verified all operations and reduction zero flag in GTKWave.<br>- Documented waveform and committed to GitHub. | - [`labs/ch06_dataflow/`](./labs/ch06_dataflow/)<br>- `theory_and_diagrams.md`<br>- `waveform.png`<br>- `cla_4bit.vcd` | ✅ **DONE** |
-| **Upcoming** | Day 7–9 | Ch 7 | **Behavioral Modeling** (`always`, blocking vs. non-blocking, FSMs) | `labs/ch07_behavioral/` | ⏳ Pending |
+| **2026-11-03** | Day 7 | Ch 7 | **Behavioral Modeling (Sequence Detector 1011 Moore FSM)**<br>- Studied structured procedures (`always`, `initial`), procedural assignments.<br>- Mastered the Golden Rule: Blocking (`=`) for combinational vs. Non-blocking (`<=`) for sequential.<br>- Designed 3-Process Moore FSM with latch-free `case` next-state logic.<br>- Coded `seq_detector_1011.v` detecting overlapping bit pattern `1011`.<br>- Built `tb_seq_detector_1011.v` testing multiple overlapping and non-matching bitstreams.<br>- Created `theory_and_diagrams.md` with state tables, Mermaid FSM state diagram, and latch prevention guide.<br>- Ready for simulation and waveform verification. | - [`labs/ch07_behavioral/`](./labs/ch07_behavioral/)<br>- `theory_and_diagrams.md`<br>- `seq_detector_1011.vcd` | 🔄 In Progress |
+| **Upcoming** | Day 8–9 | Ch 8 & 9 | **Tasks, Functions & Advanced Techniques** (Parameters, Generate blocks) | `labs/ch08_ch09_advanced/` | ⏳ Pending |
 
 ---
 
