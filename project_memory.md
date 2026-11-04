@@ -4,7 +4,7 @@
 > **Primary Reference**: *Verilog HDL: A Guide to Digital Design and Synthesis (2nd Edition)* by Samir Palnitkar  
 > **Standard**: IEEE 1364-2001 Verilog HDL  
 > **Timeline**: 10–12 Weeks | **Daily Commitment**: 2 Hours/Day (~140–160 Hours Total)  
-> **Last Updated**: 2026-11-03  
+> **Last Updated**: 2026-11-04  
 
 ---
 
@@ -97,10 +97,14 @@ flowchart LR
   - [x] Finite State Machines (Moore & Mealy architectures).
   - [x] Industry-Standard 3-Process FSM coding style.
   - [x] Lab: Overlapping Sequence Detector (`1011`) with state transition diagram.
-- [ ] **Day 8–9 (Ch 8 & 9)**: Tasks, Functions & Advanced Techniques
-  - [ ] Tasks vs. Functions: synthesis rules and testbench drivers.
-  - [ ] Module parameters (`parameter`, `localparam`) and instantiation overrides (`#(...)`).
+- [x] **Day 8 (Ch 8)**: Tasks and Functions
+  - [x] Differences between tasks and functions (time, returns, synthesis).
+  - [x] Synthesizable functions for combinational logic (`calc_parity`, `assemble_frame`).
+  - [x] Reusable verification tasks (`send_and_verify`) and automatic re-entrancy (`task automatic`).
+- [ ] **Day 9 (Ch 9)**: Useful Modeling Techniques
+  - [ ] Module parameters (`parameter`, `localparam`) and overriding (`#(...)`).
   - [ ] Generate blocks (`generate ... endgenerate`, `genvar`).
+  - [ ] Conditional compilation (`ifdef`, `ifndef`, `endif`).
 - [ ] **Day 25–28**: 🏆 **Milestone Project 1**
   - [ ] Parameterized Synchronous FIFO (`DEPTH`, `DATA_WIDTH`, pointers, status flags).
   - [ ] 32-bit ALU with 16 arithmetic/logical operations.
@@ -146,7 +150,8 @@ flowchart LR
 | **2026-10-27** | Day 5 | Ch 5 | **Gate-Level Modeling (4-to-1 MUX with Gate Delays)**<br>- Studied built-in logic gate primitives (`not`, `and`, `or`), output-first ordering.<br>- Coded `mux4_to_1.v` using logic primitives with asymmetric rise/fall delays `#(2, 3)`.<br>- Built `tb_mux4_to_1.v` exhaustively testing all 4 input channels with `$monitor` and GTKWave dump.<br>- Created `theory_and_diagrams.md` with MUX truth table, Boolean derivation, and propagation delay calculation.<br>- Verified 5ns gate propagation delay and channel selection in GTKWave.<br>- Documented waveform and committed to GitHub. | - [`labs/ch05_gate_level/`](./labs/ch05_gate_level/)<br>- `theory_and_diagrams.md`<br>- `waveform.png`<br>- `mux4_to_1.vcd` | ✅ **DONE** |
 | **2026-10-30** | Day 6 | Ch 6 | **Dataflow Modeling (4-bit Carry Lookahead Adder)**<br>- Studied continuous assignment (`assign`), concurrent evaluation, operator precedence.<br>- Coded `cla_4bit.v` using Generate ($G$) and Propagate ($P$) logic with parallel lookahead carry equations.<br>- Implemented Zero flag using Reduction NOR (`~\|sum`).<br>- Built `tb_cla_4bit.v` verifying addition, carry-in, overflow, and zero detection.<br>- Created `theory_and_diagrams.md` with Boolean carry derivation and delay comparison vs. Ripple Carry.<br>- Verified all operations and reduction zero flag in GTKWave.<br>- Documented waveform and committed to GitHub. | - [`labs/ch06_dataflow/`](./labs/ch06_dataflow/)<br>- `theory_and_diagrams.md`<br>- `waveform.png`<br>- `cla_4bit.vcd` | ✅ **DONE** |
 | **2026-11-03** | Day 7 | Ch 7 | **Behavioral Modeling (Sequence Detector 1011 Moore FSM)**<br>- Studied structured procedures (`always`, `initial`), procedural assignments.<br>- Mastered the Golden Rule: Blocking (`=`) for combinational vs. Non-blocking (`<=`) for sequential.<br>- Designed 3-Process Moore FSM with latch-free `case` next-state logic.<br>- Coded `seq_detector_1011.v` detecting overlapping bit pattern `1011`.<br>- Built `tb_seq_detector_1011.v` testing multiple overlapping and non-matching bitstreams.<br>- Created `theory_and_diagrams.md` with state tables, Mermaid FSM state diagram, and latch prevention guide.<br>- Verified all state transitions, overlapping detection, and output pulses in GTKWave.<br>- Documented waveform and committed to GitHub. | - [`labs/ch07_behavioral/`](./labs/ch07_behavioral/)<br>- `theory_and_diagrams.md`<br>- `waveform.png`<br>- `seq_detector_1011.vcd` | ✅ **DONE** |
-| **Upcoming** | Day 8–9 | Ch 8 & 9 | **Tasks, Functions & Advanced Techniques** (Parameters, Generate blocks) | `labs/ch08_ch09_advanced/` | ⏳ Pending |
+| **2026-11-04** | Day 8 | Ch 8 | **Tasks and Functions (Packet Formatter & Verification Engine)**<br>- Studied Task vs Function matrix (timing, return values, synthesis mapping).<br>- Implemented zero-delay synthesizable functions in RTL for odd parity calculation and 16-bit packet framing.<br>- Built testbench using timed reusable task `send_and_verify` with automatic pass/fail assertion.<br>- Implemented `task automatic delay_cycles` demonstrating stack allocation.<br>- Ready for simulation and waveform verification. | - [`labs/ch08_tasks_functions/`](./labs/ch08_tasks_functions/)<br>- `theory_and_diagrams.md`<br>- `packet_formatter.vcd` | 🔄 In Progress |
+| **Upcoming** | Day 9 | Ch 9 | **Useful Modeling Techniques** (Parameters, Generate blocks, Milestone 1 prep) | `labs/ch09_advanced_modeling/` | ⏳ Pending |
 
 ---
 
